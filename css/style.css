@@ -1,3 +1,4 @@
+/*video 사이즈*/
 video {
     width: 100%;
 }
@@ -7,21 +8,25 @@ body {
     color: black;
 }
 
+/*디자인 한 사람이 알수있게 해놓았지만 가려질것*/
 .blind {
     position: absolute;
     z-index: -9999999px;
 }
 
+/*header는 logo,nav 부분 해당하는 전체높이*/
 header {
     height: 100px;
     /*    background: pink;*/
 }
 
+/*본문을 center에 넣어줘서 넓이값이랑 높이값(가운데정렬)을준다.*/
 .center {
     width: 1200px;
     margin: 0 auto;
 }
 
+/*왼쪽으로 정렬 margin으로 바깥쪽 여백을 준다.*/
 .logo {
     float: left;
     margin: 25px 18px;
@@ -33,10 +38,14 @@ header {
     margin: 35px 0 0 60px;
 }
 
+/*#nav>li를 왼쪽으로 정렬후 가운데 정렬해준다*/
 #nav > li {
     float: left;
     text-align: center;
 }
+
+/*span은 inline-block이고 p는 block이다*/
+/*block을 줘서 보이게 한 다음 넓이는 색깔을 주는거임*/
 
 #nav > li > a {
     display: block;
@@ -48,6 +57,8 @@ header {
     position: relative;
 }
 
+
+/*메인메뉴에 호버하면 메뉴 밑에 빨간선을 만들었음*/
 #nav > li:hover > a:after {
     display: block;
     content: "";
@@ -59,6 +70,7 @@ header {
     background: #d84339;
 }
 
+/*.sub를 공중에 띄어서 보여지게*/
 .sub {
     position: absolute;
     margin: 15px 0;
@@ -67,7 +79,7 @@ header {
 
 }
 
-
+/*.sub한테 박스를 만들어줌 투명도도 주었음*/
 .sub > li > a {
     display: block;
     width: 150px;
@@ -77,6 +89,7 @@ header {
     /*    background: orange;*/
     background: rgba(255, 255, 255, 0.9);
 
+
 }
 
 .sub > li > a > span {
@@ -84,6 +97,8 @@ header {
     position: relative;
 }
 
+
+/*.sub메뉴 호버하면 밑에 빨간줄이 생기게 */
 .sub > li > a:hover > span:after {
     display: inline-block;
     content: "";
@@ -109,6 +124,11 @@ header {
     margin-left: 20px;
 
 }
+
+.menuBtn{
+/*    display: none;*/
+}
+
 
 #visual {
     width: 100%;
@@ -139,13 +159,13 @@ banner에 width 600%주고, banner>li에는 width 16.66666%를 줘야한다.*/
 
 
 .banner > .banner1 {
-    background-image: url(../images/banner1.jpg);
+    background-image: url(../images/banner1_blur.jpg);
     /*    display: none;*/
 
 }
 
 .banner > .banner2 {
-    background-image: url(../images/banner2.jpg);
+    background-image: url(../images/banner2_blur.jpg);
     /*    display: none;*/
 }
 
@@ -157,15 +177,17 @@ banner에 width 600%주고, banner>li에는 width 16.66666%를 줘야한다.*/
 
 }
 
+
 .banner .text {
     position: absolute;
     top: 50%;
-    left: 25%;
+    left: 24%;
     transform: translateY(-50%);
-
     color: white;
     line-height: 80px;
 }
+
+
 
 .banner .text > p {
     font-size: 22px;
@@ -275,7 +297,7 @@ banner에 width 600%주고, banner>li에는 width 16.66666%를 줘야한다.*/
 
 
 #container {
-    height: 2020px;
+/*    height: 2020px;*/
     /*    background-color: sandybrown;*/
 }
 
@@ -454,18 +476,18 @@ banner에 width 600%주고, banner>li에는 width 16.66666%를 줘야한다.*/
 }
 
 .event {
-    
+
     padding-top: 45px;
     box-sizing: border-box;
     position: relative;
 }
 
 .eventBg {
-    min-width: 1600px;
+    min-width: 160S0px;
     width: 82%;
     left: 0;
     background: #e8dccc;
-    
+
 }
 
 .eventWrap {
@@ -544,7 +566,7 @@ banner에 width 600%주고, banner>li에는 width 16.66666%를 줘야한다.*/
     display: block;
     border: 1px solid black;
     padding: 10px 50px;
-  
+
 
 }
 
@@ -630,7 +652,7 @@ input {
 }
 
 .quick {
-width: 1200px;
+    width: 1200px;
 
     text-align: center;
     margin: 0 auto;
@@ -748,7 +770,8 @@ address > .copy > span {
 .topBtn {
     position: absolute;
     right: 280px;
-    bottom: 44px;
+/*    bottom: 44px;*/
+    bottom: 0;
 
 }
 
@@ -761,4 +784,38 @@ address > .copy > span {
 
 .topBtn > a:hover {
     background: url(../images/btn_top2.jpg);
+}
+
+/*mobile 1024px*/
+@media screen and (max-width:1024px){
+    #visual{
+        width: 117%;
+    }
+}
+
+
+
+
+
+
+/*mobile 767px*/
+@media screen and (max-width:767px) {
+
+    /*menuBtn*/
+    .menuBtn {
+        position: absolute;
+        top: 100px;
+        right: 100px;
+        display: block;
+        z-index: 11000;
+    }
+
+    .menuBtn > a {
+        background: url(../images/menu.png) no-repeat;
+        display: block;
+        width: 32px;
+        height: 32px;
+
+    }
+
 }

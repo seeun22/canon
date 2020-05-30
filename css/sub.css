@@ -1,0 +1,554 @@
+body {
+    background: #f3ece4;
+    color: black;
+    /*    font-family: 'HANBatang', 'sans-serif';*/
+}
+
+/*디자인 한 사람이 알수있게 해놓았지만 가려질것*/
+.blind {
+    position: absolute;
+    z-index: -9999999px;
+}
+
+/*header는 logo,nav 부분 해당하는 전체높이*/
+header {
+    height: 100px;
+    /*    background: pink;*/
+}
+
+/*본문을 center에 넣어줘서 넓이값이랑 높이값(가운데정렬)을준다.*/
+.center {
+    width: 1200px;
+    margin: 0 auto;
+    /*        background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+/*왼쪽으로 정렬 margin으로 바깥쪽 여백을 준다.*/
+.logo {
+    float: left;
+    margin: 25px 18px;
+    /*    background: white;*/
+}
+
+/*#nav*/
+
+#nav {
+    float: left;
+    margin: 35px 0 0 60px;
+}
+
+/*#nav>li를 왼쪽으로 정렬후 가운데 정렬해준다*/
+#nav > li {
+    float: left;
+    text-align: center;
+}
+
+/*span은 inline-block이고 p는 block이다*/
+/*block을 줘서 보이게 한 다음 넓이는 색깔을 주는거임*/
+
+#nav > li > a {
+    display: block;
+    width: 150px;
+    font-size: 18px;
+    line-height: 50px;
+    font-weight: 600;
+    /*    background: white;*/
+    position: relative;
+}
+
+
+/*메인메뉴에 호버하면 메뉴 밑에 빨간선을 만들었음*/
+#nav > li:hover > a:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 5px;
+    left: 20%;
+    bottom: -15px;
+    background: #d84339;
+}
+
+/*.sub를 공중에 띄어서 보여지게*/
+.sub {
+    position: absolute;
+    margin: 15px 0;
+    display: none;
+    z-index: 100;
+
+}
+
+/*.sub한테 박스를 만들어줌 투명도도 주었음*/
+.sub > li > a {
+    display: block;
+    width: 150px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    /*    background: orange;*/
+    background: rgba(255, 255, 255, 0.9);
+
+
+}
+
+.sub > li > a > span {
+    display: inline-block;
+    position: relative;
+}
+
+
+/*.sub메뉴 호버하면 밑에 빨간줄이 생기게 */
+.sub > li > a:hover > span:after {
+    display: inline-block;
+    content: "";
+    width: 100%;
+    position: absolute;
+    background: #d84339;
+    height: 1px;
+    left: 0;
+    bottom: 10px;
+}
+
+
+.gnb {
+    float: right;
+    width: 20%;
+    margin-top: 42px;
+    /*    background: red;*/
+}
+
+.gnb > li {
+    float: left;
+    font-size: 14px;
+    margin-left: 20px;
+
+}
+
+/*visual*/
+
+#visual {
+    width: 100%;
+    height: 545px;
+    overflow: hidden;
+    background: url(../images/sub/sub_banner.jpg) no-repeat;
+    font-family: 'HANBatang';
+}
+
+
+.new {
+    position: absolute;
+    top: 142px;
+    left: 600px;
+}
+
+.bannerText > p {
+    position: absolute;
+}
+
+
+.bannerText > .bannerText1 {
+    top: 185px;
+    left: 380px;
+}
+
+.bannerText > .bannerText2 {
+    top: 185px;
+    right: 396px;
+    text-align: right;
+}
+
+
+.bannerText > .bannerText1 > a {
+    font-size: 34px;
+    font-weight: bold;
+    color: white;
+}
+
+.bannerText > .bannerText2 > a {
+    color: red;
+    font-size: 34px;
+    font-weight: bold;
+
+}
+
+.bannerText > .bannerText2 > a > span {
+    display: block;
+}
+
+.bannerText > .bannerText3 {
+    position: absolute;
+    width: 255px;
+    height: 191px;
+    text-align: right;
+    right: 396px;
+    top: 324px;
+
+}
+
+.bannerText > .bannerText3 a {
+    color: white;
+    font-size: 22px;
+    font-weight: 100;
+    line-height: 1.8;
+}
+
+.bannerText > .bannerText3 > li:last-child {
+    line-height: 6;
+}
+
+/*#container*/
+
+#container {
+    position: relative;
+    height: 2762px;
+}
+
+.subMenu {
+    display: block;
+    height: 101px;
+    border-bottom: 1px solid black;
+    position: relative;
+}
+
+.subMenu > .subName {
+    padding: 25px 0 25px 88px;
+    box-sizing: border-box;
+}
+
+.subMenu > .subName > li {
+    float: left;
+    margin-right: 35px;
+    line-height: 46px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.subMenu > .subKinds {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 340px;
+}
+
+
+.subMenu > .subKinds > li {
+    float: left;
+    margin-right: 28px;
+}
+
+.subMenu > .subKinds > li > a {
+    font-size: 18px;
+}
+
+
+/*정렬기준*/
+
+.sort {
+    position: absolute;
+    width: 235px;
+    height: 300px;
+    right: 22px;
+    top: 127px;
+    /*    background-color: yellow;*/
+    font-size: 16px;
+}
+
+.sortTitle {
+    padding-top: 10px;
+
+}
+
+.sortContents > a {
+    display: block;
+    background: white;
+    width: 160px;
+    height: 36px;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 36px;
+    text-indent: 10px;
+
+}
+
+.sortContents.active > a {
+    background: #636260;
+    color: white;
+}
+
+.sortContents > a:after {
+    display: inline-block;
+    content: "";
+    background: url(../images/sub/sub_sortBtn.png)no-repeat;
+    width: 16px;
+    height: 18px;
+    float: right;
+    margin-right: 23px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sortContents.active > a:after {
+    background: url(../images/sub/sub_sortBtnw.png)no-repeat;
+}
+
+.sortMenu {
+    display: none;
+    position: absolute;
+    width: 205px;
+    height: 170px;
+    background: white;
+    top: 36px;
+    right: 0;
+
+}
+
+.sortMenu > li {
+    margin: 20px 0 20px 20px;
+}
+
+
+/*pr*/
+
+/*
+.pr1,
+.pr2
+*/
+.pr3,
+.pr4 
+{
+    display: none;
+}
+
+
+
+.subPr div > h2 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.pr1,
+.pr3 {
+    /*        background-color: aqua;*/
+    height: 768px;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.prTitle {
+    margin: 0 0 25px 27px;
+}
+
+
+.Advanced > li {
+    width: 381px;
+    height: 706px;
+    background-color: #e8dccc;
+    float: left;
+    margin-right: 28.5px;
+    position: relative;
+}
+
+.pr2 > .Advanced > li,
+.pr4 > .Advanced > li {
+    margin-bottom: 81px;
+}
+
+.pr2 > .Advanced > li:nth-child(3),
+.pr2 > .Advanced > li:nth-child(6),
+.pr4 > .Advanced > li:nth-child(3),
+.pr4 > .Advanced > li:nth-child(6) {
+    margin-right: 0;
+}
+
+.product1 > .new {
+    position: absolute;
+    top: 29px;
+    left: 19px;
+}
+
+
+/*하트*/
+
+.like > a {
+    background: url(../images/sub/sub_grayheart.png);
+    position: absolute;
+    width: 29px;
+    height: 27px;
+    right: 24px;
+    top: 29px;
+}
+
+.like.active > a {
+    background: url(../images/sub/sub_heartred.png);
+
+}
+
+
+/**/
+.prImg {
+    width: 183px;
+    margin: 95px auto 37px;
+}
+
+.prText > .prsubTitle {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 35px;
+    text-indent: 0;
+}
+
+.prText {
+    font-size: 16px;
+}
+
+.prText > li {
+    text-indent: 35px;
+    margin-bottom: 22px;
+    line-height: 21px;
+
+}
+
+.prText > li > span {
+    display: inline-block;
+    text-indent: 47px;
+}
+
+
+/*구매버튼*/
+
+.buyBtn {
+    position: absolute;
+    right: 24px;
+    bottom: 16px;
+}
+
+.buyBtn > a {
+    display: block;
+    width: 127px;
+    height: 41px;
+    color: white;
+    background: #373234;
+    text-align: center;
+    font-size: 16px;
+    line-height: 41px;
+}
+
+
+
+/*slideBtn*/
+
+.slideBtn {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slideBtn > li {
+    display: inline-block;
+    margin: 0 25px;
+
+}
+
+/*footer*/
+
+footer {
+    height: 588px;
+    box-sizing: border-box;
+    background: #313131;
+}
+
+footer > .center {
+    position: relative;
+}
+
+.footTop {
+    height: 300px;
+    border-bottom: 1px solid white;
+}
+
+.other {
+    text-align: center;
+}
+
+.other > li {
+    float: left;
+    padding: 25px 96px;
+}
+
+.other a {
+    color: white;
+    font-size: 15px;
+}
+
+.footTitle > a {
+    line-height: 6;
+}
+
+
+.footBottom {
+    height: 288px;
+    /*    background: pink;*/
+
+}
+
+.footMenu > li {
+    float: left;
+    padding: 55px 0 0 22px;
+    box-sizing: border-box;
+}
+
+.footMenu > li:first-child {
+    margin-left: 45px;
+}
+
+.footMenu > li > a {
+    font-size: 14px;
+    color: white;
+}
+
+.footMenu > .user > a {
+    color: #d84339;
+}
+
+address {
+    font-size: 14px;
+    color: #6d6d6d;
+    display: inline-block;
+    content: "";
+    width: 50%;
+    padding: 20px 0 0 67px;
+    line-height: 1.5;
+
+}
+
+address > .copy > span {
+    color: #d84339;
+}
+
+.sns {
+    position: absolute;
+    right: 98px;
+    bottom: 98px;
+}
+
+.topBtn {
+    position: absolute;
+    right: -45px;
+    bottom: 0;
+
+}
+
+.topBtn > a {
+    display: block;
+    width: 45px;
+    height: 50px;
+    background: url(../images/btn_top.jpg);
+}
+
+.topBtn > a:hover {
+    background: url(../images/btn_top2.jpg);

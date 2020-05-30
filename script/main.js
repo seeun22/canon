@@ -14,13 +14,12 @@ $(function () {
         $(".search").stop().slideToggle(300);
     })
 
-$(".search>li").click(function(e){
-         e.preventDefault();
-         e.preventDefault();
-    var selected = $(this).text();
-    $(".prSearch>a").text(selected);
-    $(".search").slideUp(300);
-})
+    $(".search>li").click(function (e) {
+        e.preventDefault();
+        var selected = $(this).text();
+        $(".prSearch>a").text(selected);
+        $(".search").slideUp(300);
+    })
 
     //banner
     //배너 슬라이브 버튼을 누르면 움직이고, 자동으로도 움직이게
@@ -49,34 +48,34 @@ $(".search>li").click(function(e){
         sNum = $(this).index();
         moveBanner();
     })
-    
-//    3초마다 배너가 왼쪽으로 자동 이동
-//        var time = setInterval(function () {
-//            if (sNum == 3) {
-//                sNum = 0;
-//                $(".banner").css("margin-left", 0);
-//            }
-//            sNum++;
-//            moveBanner();
-//        }, 1000)
-//    
-//        // 배너에 마우스가 들어가면 자동재생 stop
-//        $("#visual").mouseenter(function () {
-//            clearInterval(time);
-//        })
-//    
-//    
-//        $("#visual").mouseleave(function () {
-//            time = setInterval(function () {
-//                if (sNum == 3) {
-//                    sNum = 0;
-//                    $(".banner").css("margin-left", 0);
-//                }
-//                sNum++;
-//                moveBanner();
-//            }, 3000)
-//        })
-//
+
+    //    3초마다 배너가 왼쪽으로 자동 이동
+    var time = setInterval(function () {
+        if (sNum == 3) {
+            sNum = 0;
+            $(".banner").css("margin-left", 0);
+        }
+        sNum++;
+        moveBanner();
+    }, 3000)
+
+    // 배너에 마우스가 들어가면 자동재생 stop
+    $("#visual").mouseenter(function () {
+        clearInterval(time);
+    })
+
+
+    $("#visual").mouseleave(function () {
+        time = setInterval(function () {
+            if (sNum == 3) {
+                sNum = 0;
+                $(".banner").css("margin-left", 0);
+            }
+            sNum++;
+            moveBanner();
+        }, 3000)
+    })
+
 
 
 
@@ -109,14 +108,14 @@ $(".search>li").click(function(e){
     $(".prBtnL").click(function (e) {
         e.preventDefault();
         console.log(num);
-      if(num==1){
-          $(".prImg>li").eq(6).children("a").stop().animate({
-              "Width": 90 +"%"
-          },100)
-      }
-        if(num==0){
-            num=6;
-            $(".prImg").css("margin-left",-prWidth * num + "px")
+        if (num == 1) {
+            $(".prImg>li").eq(6).children("a").stop().animate({
+                "Width": 90 + "%"
+            }, 100)
+        }
+        if (num == 0) {
+            num = 6;
+            $(".prImg").css("margin-left", -prWidth * num + "px")
         }
         num--;
         movePr();
@@ -137,6 +136,7 @@ $(".search>li").click(function(e){
 
 
     //topBtn
+    
     $(".topBtn").click(function (e) {
         e.preventDefault();
         $("html,body").stop().animate({
@@ -145,46 +145,36 @@ $(".search>li").click(function(e){
     })
 
 
-    //video
+    //    video
 
 
-
-    // play video event
-//    $("#playBtn").on("click", function () {
-//        $("#video")[0].play();
-//        $(this).toggleClass("active");
-//
-//    })
-    
     $(".banner>li").eq(2).on("mouseenter", function () {
         $("#playBtn").css("display", "block");
     })
-    
+
     $(".banner>li").eq(2).on("mouseleave", function () {
         $("#playBtn").css("display", "none");
     })
 
     $("#playBtn").click(function () {
-//        $("#video")[0].pause();
-        
-        if($("#playBtn").hasClass("active")){
-           
+        //        $("#video")[0].pause();
+
+        if ($("#playBtn").hasClass("active")) {
+
             $("#video")[0].play();
             $("#playBtn").toggleClass("active");
-             console.log($("#playBtn").hasClass("active"));
-        }else{
-            console.log($("#playBtn").hasClass("active"));
+            //             console.log($("#playBtn").hasClass("active"));
+        } else {
+            //            console.log($("#playBtn").hasClass("active"));
             $("#video")[0].pause();
             $("#playBtn").toggleClass("active");
         }
-        
+
     })
-    
-    
 
 
 
-  
+
 
 
 })
